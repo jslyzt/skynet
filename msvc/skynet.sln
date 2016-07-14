@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "skynet", "skynet.vcxproj", "{92EE4F15-8B7B-4E84-9CC1-0B13FA553C6B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lualib", "lualib.vcxproj", "{2B83CA99-C5D7-4B9D-9DD9-4B4C32B455F1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "service", "service.vcxproj", "{8A71C90F-9496-49C1-9C34-EE540667B21C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92EE4F15-8B7B-4E84-9CC1-0B13FA553C6B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{92EE4F15-8B7B-4E84-9CC1-0B13FA553C6B}.Debug|Win32.Build.0 = Debug|Win32
+		{92EE4F15-8B7B-4E84-9CC1-0B13FA553C6B}.Release|Win32.ActiveCfg = Release|Win32
+		{92EE4F15-8B7B-4E84-9CC1-0B13FA553C6B}.Release|Win32.Build.0 = Release|Win32
+		{2B83CA99-C5D7-4B9D-9DD9-4B4C32B455F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2B83CA99-C5D7-4B9D-9DD9-4B4C32B455F1}.Debug|Win32.Build.0 = Debug|Win32
+		{2B83CA99-C5D7-4B9D-9DD9-4B4C32B455F1}.Release|Win32.ActiveCfg = Release|Win32
+		{2B83CA99-C5D7-4B9D-9DD9-4B4C32B455F1}.Release|Win32.Build.0 = Release|Win32
+		{8A71C90F-9496-49C1-9C34-EE540667B21C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8A71C90F-9496-49C1-9C34-EE540667B21C}.Debug|Win32.Build.0 = Debug|Win32
+		{8A71C90F-9496-49C1-9C34-EE540667B21C}.Release|Win32.ActiveCfg = Release|Win32
+		{8A71C90F-9496-49C1-9C34-EE540667B21C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
