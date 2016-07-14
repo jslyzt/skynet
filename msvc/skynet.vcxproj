@@ -39,6 +39,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\build\bin</OutDir>
+    <IntDir>$(SolutionDir)..\build\$(Configuration)_$(PlatformToolset)</IntDir>
+    <TargetName>$(ProjectName)d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -50,6 +53,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\3rd\lua;$(SolutionDir)..\3rd\lua-md5;$(SolutionDir)..\3rd\lpeg;$(SolutionDir)..\3rd\jemalloc\include;$(SolutionDir)..\lualib-src;$(SolutionDir)..\service-src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -74,6 +78,47 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\skynet-src\atomic.h" />
+    <ClInclude Include="..\skynet-src\luashrtbl.h" />
+    <ClInclude Include="..\skynet-src\malloc_hook.h" />
+    <ClInclude Include="..\skynet-src\rwlock.h" />
+    <ClInclude Include="..\skynet-src\skynet.h" />
+    <ClInclude Include="..\skynet-src\skynet_daemon.h" />
+    <ClInclude Include="..\skynet-src\skynet_env.h" />
+    <ClInclude Include="..\skynet-src\skynet_handle.h" />
+    <ClInclude Include="..\skynet-src\skynet_harbor.h" />
+    <ClInclude Include="..\skynet-src\skynet_imp.h" />
+    <ClInclude Include="..\skynet-src\skynet_log.h" />
+    <ClInclude Include="..\skynet-src\skynet_malloc.h" />
+    <ClInclude Include="..\skynet-src\skynet_module.h" />
+    <ClInclude Include="..\skynet-src\skynet_monitor.h" />
+    <ClInclude Include="..\skynet-src\skynet_mq.h" />
+    <ClInclude Include="..\skynet-src\skynet_server.h" />
+    <ClInclude Include="..\skynet-src\skynet_socket.h" />
+    <ClInclude Include="..\skynet-src\skynet_timer.h" />
+    <ClInclude Include="..\skynet-src\socket_epoll.h" />
+    <ClInclude Include="..\skynet-src\socket_kqueue.h" />
+    <ClInclude Include="..\skynet-src\socket_poll.h" />
+    <ClInclude Include="..\skynet-src\socket_server.h" />
+    <ClInclude Include="..\skynet-src\spinlock.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\skynet-src\malloc_hook.c" />
+    <ClCompile Include="..\skynet-src\skynet_daemon.c" />
+    <ClCompile Include="..\skynet-src\skynet_env.c" />
+    <ClCompile Include="..\skynet-src\skynet_error.c" />
+    <ClCompile Include="..\skynet-src\skynet_handle.c" />
+    <ClCompile Include="..\skynet-src\skynet_harbor.c" />
+    <ClCompile Include="..\skynet-src\skynet_log.c" />
+    <ClCompile Include="..\skynet-src\skynet_main.c" />
+    <ClCompile Include="..\skynet-src\skynet_module.c" />
+    <ClCompile Include="..\skynet-src\skynet_monitor.c" />
+    <ClCompile Include="..\skynet-src\skynet_mq.c" />
+    <ClCompile Include="..\skynet-src\skynet_server.c" />
+    <ClCompile Include="..\skynet-src\skynet_socket.c" />
+    <ClCompile Include="..\skynet-src\skynet_start.c" />
+    <ClCompile Include="..\skynet-src\skynet_timer.c" />
+    <ClCompile Include="..\skynet-src\socket_server.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

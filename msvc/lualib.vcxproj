@@ -10,6 +10,32 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\lualib-src\lsha1.c" />
+    <ClCompile Include="..\lualib-src\lua-bson.c" />
+    <ClCompile Include="..\lualib-src\lua-clientsocket.c" />
+    <ClCompile Include="..\lualib-src\lua-cluster.c" />
+    <ClCompile Include="..\lualib-src\lua-crypt.c" />
+    <ClCompile Include="..\lualib-src\lua-debugchannel.c" />
+    <ClCompile Include="..\lualib-src\lua-memory.c" />
+    <ClCompile Include="..\lualib-src\lua-mongo.c" />
+    <ClCompile Include="..\lualib-src\lua-multicast.c" />
+    <ClCompile Include="..\lualib-src\lua-mysqlaux.c" />
+    <ClCompile Include="..\lualib-src\lua-netpack.c" />
+    <ClCompile Include="..\lualib-src\lua-profile.c" />
+    <ClCompile Include="..\lualib-src\lua-seri.c" />
+    <ClCompile Include="..\lualib-src\lua-sharedata.c" />
+    <ClCompile Include="..\lualib-src\lua-skynet.c" />
+    <ClCompile Include="..\lualib-src\lua-socket.c" />
+    <ClCompile Include="..\lualib-src\lua-stm.c" />
+    <ClCompile Include="..\lualib-src\sproto\lsproto.c" />
+    <ClCompile Include="..\lualib-src\sproto\sproto.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\lualib-src\lua-seri.h" />
+    <ClInclude Include="..\lualib-src\sproto\msvcint.h" />
+    <ClInclude Include="..\lualib-src\sproto\sproto.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2B83CA99-C5D7-4B9D-9DD9-4B4C32B455F1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -37,7 +63,11 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\build\lib\</OutDir>
+    <TargetName>$(ProjectName)_$(PlatformToolset)d</TargetName>
+    <IntDir>$(SolutionDir)..\build\$(Configuration)_$(PlatformToolset)</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
@@ -45,6 +75,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\3rd\lua;$(SolutionDir)..\3rd\lua-md5;$(SolutionDir)..\3rd\lpeg;$(SolutionDir)..\3rd\jemalloc\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

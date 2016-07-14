@@ -10,6 +10,16 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\service-src\databuffer.h" />
+    <ClInclude Include="..\service-src\hashid.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\service-src\service_gate.c" />
+    <ClCompile Include="..\service-src\service_harbor.c" />
+    <ClCompile Include="..\service-src\service_logger.c" />
+    <ClCompile Include="..\service-src\service_snlua.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8A71C90F-9496-49C1-9C34-EE540667B21C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -37,7 +47,13 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\build\lib</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)_$(PlatformToolset)d</TargetName>
+    <IntDir>$(SolutionDir)..\build\$(Configuration)_$(PlatformToolset)</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
@@ -45,6 +61,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\3rd\lua;$(SolutionDir)..\3rd\lua-md5;$(SolutionDir)..\3rd\lpeg;$(SolutionDir)..\3rd\jemalloc\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
